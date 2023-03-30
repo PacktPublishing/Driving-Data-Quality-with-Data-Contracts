@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "title": "customer",
+  "description": "A customer of our e-commerce website",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "The unique identifier for the customer.",
+    },
+    "name": {
+      "type": "string",
+      "description": "The name of the customer.",
+    },
+    "email": {
+      "type": "string",
+      "description": "The email address of the customer.",
+      "pattern": "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$"
+    },
+    "language": {
+      "type": "string",
+      "description": "The language preference of the customer.",
+      "enum": ["en", "fr", "es"]
+    }
+  },
+  "required": ["id", "name", "email", "language"]
+}

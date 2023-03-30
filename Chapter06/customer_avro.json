@@ -1,0 +1,26 @@
+{
+  "type": "record",
+  "name": "Customer",
+  "doc": "A customer of our e-commerce website",
+  "fields": [{
+      "name": "id",
+      "type": "string",
+      "doc": "The unique identifier for the customer."
+    },
+    {
+      "name": "name",
+      "type": "string",
+      "doc": "The name of the customer."
+    },
+    {
+      "name": "email",
+      "type": "string",
+      "doc": "The email address of the customer."
+    },
+    {
+      "name": "language",
+      "type": "string",
+      "doc": "The language preference of the customer."
+    }
+  ]
+}
