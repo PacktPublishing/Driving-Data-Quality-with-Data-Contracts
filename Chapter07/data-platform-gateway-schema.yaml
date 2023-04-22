@@ -1,0 +1,25 @@
+name: transaction_fee_calculated
+namespace: core_banking
+doc: Records the calculation of a transaction fee that would be collected from a merchant.
+primary_keys:
+  - event_id
+fields:
+  - name: event_id
+    doc: Unique deterministic ID of the event.
+    type: string
+    required: true
+  - name: created_at
+    doc: RFC 3339 time at which the event was emitted.
+    type: timestamp
+    required: true
+  - name: payment_currency
+    doc: >
+      ISO 4217 currency code of the payment which this fee is been charged for.
+      Examples include AUD, CAD, DKK, EUR, GBP, NZD, SEK, USD
+    type: string
+  - name: amount
+    doc: The amount (in minor currency unit) of the calculated fee.
+    type: long
+  - name: net_amount
+    doc: The amount (in minor currency unit) of the calculated fee, minus tax
+    type: long
