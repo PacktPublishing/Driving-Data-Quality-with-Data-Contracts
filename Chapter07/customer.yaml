@@ -1,0 +1,22 @@
+name: Customer
+description: A customer record ingested from Salesforce.
+owner: product-team@example.com
+version: 2
+warehouse_path: sales_data.salesforce.customers
+backups:
+  schedule: @daily
+  expire: P60D
+fields:
+  id:
+    type: string
+    description: The unique identifier for the record.
+  name:
+    type: string
+    description: The name of the customer.
+    personal_data: true
+    anonymization_strategy: hex
+  email:
+    type: string
+    description: The email address of the customer.
+    personal_data: true
+    anonymization_strategy: email
