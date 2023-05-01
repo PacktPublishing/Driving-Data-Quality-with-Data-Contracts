@@ -4,6 +4,8 @@ from data_contracts import DataContract
 
 
 class TestDataContracts(unittest.TestCase):
+    maxDiff = None
+
     def test_name(self):
         data_contract = DataContract("../contracts/Customer.yaml")
         self.assertEqual(data_contract.name(), 'Customer')
@@ -37,6 +39,47 @@ class TestDataContracts(unittest.TestCase):
   }
 ]"""
         actual = data_contract.bigquerySchema()
+        self.assertEqual(actual, expected)
+
+    def test_json_schema(self):
+        data_contract = DataContract("../contracts/Customer.yaml")
+
+        expected = """{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Customer",
+  "description": "A customer of our e-commerce website.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "description": "The unique identifier for the customer.",
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the customer.",
+      "type": "string"
+    },
+    "email": {
+      "description": "The email address of the customer.",
+      "type": "string",
+      "pattern": "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\\\.[a-zA-Z]{2,}$"
+    },
+    "language": {
+      "description": "The language preference of the customer.",
+      "type": "string",
+      "enum": [
+        "en",
+        "fr",
+        "es"
+      ]
+    }
+  },
+  "required": [
+    "id",
+    "name",
+    "email"
+  ]
+}"""
+        actual = data_contract.jsonSchema()
         self.assertEqual(actual, expected)
 
 

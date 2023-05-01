@@ -39,3 +39,35 @@ class DataContract:
             bq_schema.append(schema)
 
         return json.dumps(bq_schema, indent=2)
+
+    def jsonSchema(self) -> str:
+        '''
+        Generate a JSON Schema from the data contract.
+
+        Returns:
+            The JSON Schema
+        '''
+        properties = {}
+        required = []
+        for name, metadata in self.contract['fields'].items():
+            properties[name] = {
+                'description': metadata['description'],
+                'type': metadata['type']
+            }
+            if 'enum' in metadata:
+                properties[name]['enum'] = metadata['enum']
+            if 'pattern' in metadata:
+                properties[name]['pattern'] = metadata['pattern']
+
+            if 'required' in metadata and metadata['required'] is True:
+                required.append(name)
+
+        schema = {
+            "$schema": "https://json-schema.org/draft/2020-12/schema",
+            "title": self.name(),
+            "description": self.contract['description'],
+            "type": "object",
+            "properties": properties,
+            "required": required
+        }
+        return json.dumps(schema, indent=2)
