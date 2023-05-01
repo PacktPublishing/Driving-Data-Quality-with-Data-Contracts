@@ -1,0 +1,6 @@
+name: data-contracts
+runtime:
+  name: python
+  options:
+    virtualenv: ../venv
+description: Data Contracts book example
