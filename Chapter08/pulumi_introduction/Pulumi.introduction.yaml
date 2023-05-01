@@ -1,3 +1,2 @@
-encryptionsalt: v1:THKOpi2OPRE=:v1:jAAGeNChqoHvRCUi:+2AR91dTVSaTpqR31rXiUJQpn78fww==
 config:
-  gcp:project: fifth-branch-384809
+  gcp:project: my-google-project-2468
