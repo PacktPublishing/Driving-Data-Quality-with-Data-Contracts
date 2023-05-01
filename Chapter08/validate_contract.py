@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 import yaml
 
 with open("contracts/Customer-invalid.yaml", "r") as stream:
