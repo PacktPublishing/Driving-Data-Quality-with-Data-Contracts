@@ -6,7 +6,6 @@ default_dataset = bigquery.Dataset(
     dataset_id="pulumi_introduction",
     friendly_name="Pulumi Introduction",
     description="This is an example description",
-    location="US",
 )
 default_table = bigquery.Table(
     "defaultTable",
