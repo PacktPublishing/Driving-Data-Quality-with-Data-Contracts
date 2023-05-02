@@ -23,7 +23,7 @@ data_contract = DataContract("contracts/Customer.yaml")
 
 for event in events:
     try:
-        validate(event, data_contract.jsonSchema())
+        validate(event, data_contract.json_schema())
         print(f"✅ Successfully validated event {event}")
     except ValidationError as e:
         print(f"❗ Error validating event {event}\n{e}")

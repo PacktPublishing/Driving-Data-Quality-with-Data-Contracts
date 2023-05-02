@@ -42,7 +42,7 @@ class TestDataContracts(unittest.TestCase):
     "description": "The language preference of the customer."
   }
 ]"""
-        actual = data_contract.bigquerySchema()
+        actual = data_contract.bigquery_schema()
         self.assertEqual(actual, expected)
 
     def test_json_schema(self):
@@ -83,7 +83,7 @@ class TestDataContracts(unittest.TestCase):
                 "email"
             ]
         }
-        actual = data_contract.jsonSchema()
+        actual = data_contract.json_schema()
         self.assertEqual(actual, expected)
 
 

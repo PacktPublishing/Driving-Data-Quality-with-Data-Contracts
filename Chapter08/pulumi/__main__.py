@@ -19,4 +19,4 @@ customer_table = bigquery.Table("customerTable",
     dataset_id=dataset.dataset_id,
     table_id=data_contract.name(),
     deletion_protection=False,
-    schema=data_contract.bigquerySchema())
+    schema=data_contract.bigquery_schema())

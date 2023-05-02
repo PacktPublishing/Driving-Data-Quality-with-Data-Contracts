@@ -23,7 +23,7 @@ class DataContract:
         '''
         return self.contract['name']
 
-    def bigquerySchema(self) -> str:
+    def bigquery_schema(self) -> str:
         '''
         Generate a BigQuery schema from the data contract.
 
@@ -43,7 +43,7 @@ class DataContract:
 
         return json.dumps(bq_schema, indent=2)
 
-    def jsonSchema(self) -> dict:
+    def json_schema(self) -> dict:
         '''
         Generate a JSON Schema from the data contract.
 
@@ -74,4 +74,3 @@ class DataContract:
             "required": required
         }
         return schema
-        # return json.dumps(schema, indent=2)
