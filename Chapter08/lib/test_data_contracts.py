@@ -6,6 +6,10 @@ from data_contracts import DataContract
 class TestDataContracts(unittest.TestCase):
     maxDiff = None
 
+    def test_invalid_contract(self):
+        with self.assertRaises(ValueError):
+            DataContract("../contracts/Customer-invalid.yaml")
+
     def test_name(self):
         data_contract = DataContract("../contracts/Customer.yaml")
         self.assertEqual(data_contract.name(), 'Customer')

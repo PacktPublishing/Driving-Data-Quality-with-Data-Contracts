@@ -12,6 +12,9 @@ class DataContract:
     def __init__(self, path: str):
         with open(path, "r") as stream:
             self.contract = yaml.safe_load(stream)
+        
+        if 'owner' not in self.contract:
+            raise ValueError(f'`{self.name()}` contract does not have an owner')
 
     def name(self) -> str:
         '''
