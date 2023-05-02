@@ -40,7 +40,7 @@ class DataContract:
 
         return json.dumps(bq_schema, indent=2)
 
-    def jsonSchema(self) -> str:
+    def jsonSchema(self) -> dict:
         '''
         Generate a JSON Schema from the data contract.
 
@@ -70,4 +70,5 @@ class DataContract:
             "properties": properties,
             "required": required
         }
-        return json.dumps(schema, indent=2)
+        return schema
+        # return json.dumps(schema, indent=2)
