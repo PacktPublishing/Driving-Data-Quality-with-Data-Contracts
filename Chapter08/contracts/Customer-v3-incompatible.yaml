@@ -1,0 +1,22 @@
+name: Customer
+description: A customer of our e-commerce website.
+owner: product-team@data-contracts.com
+version: 1
+fields:
+  id:
+    type: string
+    description: The unique identifier for the customer.
+    required: true
+  name:
+    type: string
+    description: The name of the customer.
+    required: true
+    personal_data: true
+    anonymization_strategy: hex
+  language:
+    type: string
+    description: The language preference of the customer.
+    enum: [en, fr, es]
+  country:
+    type: string
+    description: The country the customer resides in.

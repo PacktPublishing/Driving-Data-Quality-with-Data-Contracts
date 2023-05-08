@@ -71,6 +71,7 @@ class DataContract:
             "description": self.contract['description'],
             "type": "object",
             "properties": properties,
-            "required": required
+            "required": required,
+            "additionalProperties": True
         }
         return schema
