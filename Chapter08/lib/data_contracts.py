@@ -22,6 +22,13 @@ class DataContract:
             The name of the data contract.
         '''
         return self.contract['name']
+    
+    def fields(self) -> dict:
+        '''
+        Returns:
+            The fields that make up the schema.
+        '''
+        return self.contract['fields']
 
     def bigquery_schema(self) -> str:
         '''
@@ -31,7 +38,7 @@ class DataContract:
             The BigQuery schema as JSON
         '''
         bq_schema = []
-        for name, metadata in self.contract['fields'].items():
+        for name, metadata in self.fields().items():
             schema = {
                 'name': name,
                 'type': metadata['type'].upper(),
@@ -52,7 +59,7 @@ class DataContract:
         '''
         properties = {}
         required = []
-        for name, metadata in self.contract['fields'].items():
+        for name, metadata in self.fields().items():
             properties[name] = {
                 'description': metadata['description'],
                 'type': metadata['type']
