@@ -81,7 +81,8 @@ class TestDataContracts(unittest.TestCase):
                 "id",
                 "name",
                 "email"
-            ]
+            ],
+            "additionalProperties": True
         }
         actual = data_contract.json_schema()
         self.assertEqual(actual, expected)
