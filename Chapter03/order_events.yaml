@@ -1,0 +1,36 @@
+description: An event generated when an order is created
+owner: product-team@data-contracts.com
+version: 1
+slos:
+  completeness_percent: 100
+  timeliness_mins: 60
+  availability_percent: 95
+lakehouse_path: order_events
+fields:
+  id:
+    type: string
+    description: The unique identifier for the order
+  created_at:
+    type: timestamp
+    description: The date and time the order was created
+  items:
+    type: array
+    fields:
+      product_id:
+        type: string
+        description: The unique identifier for the product
+      price:
+        type: float
+        description: The price of the product, in cents
+      quantity:
+        type: integer
+        description: The amount of this product ordered
+      discount_id:
+        type: string
+        description: The unique identifier for the discount
+      discount_percent:
+        type: float
+        description: The percentage discount applied to this item, represented as a number between 0 and 1
+  order_total:
+    type: float
+    description: The total cost of the order, in cents
