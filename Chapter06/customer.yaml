@@ -1,6 +1,6 @@
 name: Customer
 description: A customer of our e-commerce website.
-owner: product-team@example.com
+owner: product-team@data-contracts.com
 version: 2
 fields:
   id:

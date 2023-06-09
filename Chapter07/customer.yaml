@@ -1,6 +1,6 @@
 name: Customer
 description: A customer record ingested from Salesforce.
-owner: product-team@example.com
+owner: product-team@data-contracts.com
 version: 2
 warehouse_path: sales_data.salesforce.customers
 backups:
