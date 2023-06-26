@@ -1,0 +1,16 @@
+name: Customer
+description: A customer of our e-commerce website.
+owner: product-team@data-contracts.com
+version: 1
+warehouse_path: app.customers
+fields:
+  name:
+    type: string
+    description: The name of the customer.
+    personal_data: true
+    anonymization_strategy: hex
+  email:
+    type: string
+    description: The email address of the customer.
+    personal_data: true
+    anonymization_strategy: email
