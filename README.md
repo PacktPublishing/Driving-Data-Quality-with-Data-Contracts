@@ -50,8 +50,6 @@ With the following software and hardware list you can run all code files present
 | 8 | Google Cloud Platform | Windows, macOS, or Linux |
 
 
-We also provide a PDF file that has color images of the screenshots/diagrams used in this book. [Click here to download it]().
-
 ### Related products
 * Data Modeling with Snowflake [[Packt]](https://www.packtpub.com/product/data-modeling-with-snowflake/9781837634453?utm_source=github&utm_medium=repository&utm_campaign=9781837634453) [[Amazon]](https://www.amazon.com/dp/1837634459)
 
